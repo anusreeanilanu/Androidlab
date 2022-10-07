@@ -1,0 +1,34 @@
+package com.example.myapplication12;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
+public class MainActivity extends AppCompatActivity {
+    ImageView im,img;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        im=findViewById(R.id.imageView);
+        img=findViewById(R.id.imageView2);
+        im.setOnClickListener(this::click);
+        img.setOnClickListener(this::click);
+    }
+
+    private void click(View view) {
+        if(view.getId()==R.id.imageView)
+        {
+            im.setVisibility(view.GONE);
+            img.setVisibility(view.VISIBLE);
+        }
+        else
+        {
+            img.setVisibility(view.GONE);
+            im.setVisibility(view.VISIBLE);
+        }
+    }
+
+}
