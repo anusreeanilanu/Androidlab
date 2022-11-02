@@ -1,0 +1,53 @@
+package com.example.uiform;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+     private EditText un,em,ph,pa;
+     private Button reg;
+     String user,mail,phn,pass;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        un = (EditText) findViewById(R.id.uname);
+        em = (EditText) findViewById(R.id.email);
+        ph = (EditText) findViewById(R.id.phone);
+        pa = (EditText) findViewById(R.id.password);
+        reg = (Button) findViewById(R.id.register);
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                user = un.getText().toString().trim();
+                mail = em.getText().toString().trim();
+                phn = ph.getText().toString().trim();
+                pass = pa.getText().toString().trim();
+
+                if (user.equals("")) {
+                    Toast.makeText(MainActivity.this, "Enter your username", Toast.LENGTH_SHORT).show();
+                }
+                else if (mail.equals("")) {
+                    Toast.makeText(MainActivity.this, "Enter your email", Toast.LENGTH_SHORT).show();
+                }
+                else if (phn.equals("")) {
+                    Toast.makeText(MainActivity.this, "Enter your phone", Toast.LENGTH_SHORT).show();
+                }
+                else if (pass.equals("")) {
+                    Toast.makeText(MainActivity.this, "Enter your password", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+    }
+
+
+
